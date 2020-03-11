@@ -9,13 +9,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"coverView": true
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.1",
-	"appid": "wx4ed9c279fda6e3de",
-	"projectname": "Tuniao-shop",
+	"libVersion": "2.4.2",
+	"appid": "wxfd5241d66a07713f",
+	"projectname": "ColorUI-template",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -31,105 +30,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"gamePlugin": {
+		"miniprogram": {
 			"current": -1,
 			"list": []
-		},
-		"miniprogram": {
-			"current": 7,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/search/search",
-					"pathName": "pages/search/search",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cate/cate",
-					"pathName": "pages/cate/cate",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/my",
-					"pathName": "pages/my/my",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/product/product",
-					"pathName": "pages/product/product",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cart/cart",
-					"pathName": "pages/cart/cart",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/orderlist/orderlist",
-					"pathName": "pages/orderlist/orderlist",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/about/about",
-					"pathName": "pages/about/about",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/activity/activity",
-					"pathName": "pages/activity/activity",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/about/about",
-					"pathName": "pages/about/about",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/orderlist/orderlist",
-					"pathName": "pages/orderlist/orderlist",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/product/product",
-					"pathName": "pages/product/product",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/process/process",
-					"pathName": "pages/process/process",
-					"scene": null
-				}
-			]
 		}
 	}
 }
