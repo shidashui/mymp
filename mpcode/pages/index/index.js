@@ -1,56 +1,27 @@
-//index.js
-//获取应用实例
-const app = getApp()
+const title_dict = {'home':'首页', 'activity':'活动', 'tree_hole':'树洞', 'my':'我的', 'add':'发布'}
 
 Page({
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    motto: 'Hi 开发者！',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+		title:'首页',
+    PageCur: 'home'
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  NavChange(e) {
+		let cur = e.currentTarget.dataset.cur
+    this.setData({
+      PageCur: cur,
+			title: title_dict[cur]
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+  onShareAppMessage() {
+    return {
+      title: 'ColorUI-高颜值的小程序UI组件库',
+      imageUrl: '/images/share.jpg',
+      path: '/pages/index/index'
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
+	onLoad: function (options) {
+	},
 })

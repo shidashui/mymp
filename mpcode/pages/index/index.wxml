@@ -1,17 +1,38 @@
 <cu-custom bgColor="bg-gradual-blue">
-  <view slot="content">ColorUI 空白模板</view>
+  <view slot="content">{{title}}</view>
 </cu-custom>
-<view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
-  <view class="flex justify-center">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 获取头像昵称 </button>
-    <block wx:else>
-      <view class='text-center'>
-        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
-        <view class="padding">{{userInfo.nickName}}</view>
-      </view>
-    </block>
+<home wx:if="{{PageCur=='home'}}"></home>
+<activity wx:if="{{PageCur=='activity'}}"></activity>
+<tree-hole wx:if="{{PageCur=='tree_hole'}}"></tree-hole>
+<my wx:if="{{PageCur=='my'}}"></my>
+<add wx:if="{{PageCur=='add'}}"></add>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/home{{PageCur=='home'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='home'?'text-green':'text-gray'}}">首页</view>
   </view>
-</view>
-<view class="text-center margin-top">
-  <text class="text-grey text-xl">{{motto}}</text>
+  <view class="action" bindtap="NavChange" data-cur="activity">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/activity{{PageCur=='activity'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='activity'?'text-green':'text-gray'}}">活动</view>
+  </view>
+	<view class="action text-gray add-action">
+		<button class="cu-btn cuIcon-add bg-green shadow" bindtap="NavChange" data-cur="add"></button>
+		发布
+	</view>
+  <view class="action" bindtap="NavChange" data-cur="tree_hole">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/tree_hole{{PageCur=='tree_hole'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='tree_hole'?'text-green':'text-gray'}}">树洞</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="my">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/my{{PageCur=='my'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='my'?'text-green':'text-gray'}}">我的</view>
+  </view>
 </view>

@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "home": "/pages/home/home",
+    "activity": "/pages/activity/activity",
+    "tree-hole": "/pages/tree_hole/tree_hole",
+    "my": "/pages/my/my",
+		"add":"/pages/add/add"
+  }
 }

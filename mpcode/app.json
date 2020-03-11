@@ -3,14 +3,15 @@
     "pages/index/index",
     "pages/activity/activity",
     "pages/my/my",
-    "pages/tree_hole/tree_hole"
+    "pages/tree_hole/tree_hole",
+    "pages/home/home",
+    "pages/add/add"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ColorUI",
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#39b54a",
+		"navigationBarTitleText": "Color UI",
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
