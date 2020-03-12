@@ -1,5 +1,5 @@
-const app = getApp();
-console.log(app.globalData.userInfo)
+const app = getApp()
+
 Component({
   options: {
     addGlobalClass: true,
@@ -9,10 +9,42 @@ Component({
     forksCount: 0,
     visitTotal: 0,
 		//数据
-		nickName:"未登录",
-		imgSrc:"/images/logo.png",
+		userInfo: {},
+		hasUserInfo: false,
+		canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   attached() {
+		//获取个人信息
+		if (app.globalData.userInfo) {
+			this.setData({
+				userInfo: app.globalData.userInfo,
+				hasUserInfo: true
+			})
+		} else if (this.data.canIUse){
+			// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+			// 所以此处加入 callback 以防止这种情况
+			app.userInfoReadyCallback = res => {
+				let info = res.userInfo
+				this.setData({
+					userInfo: info,
+					hasUserInfo: true,
+					nickName:info.nickName,
+					imgSrc:info.avatarUrl
+				})
+			}
+		} else {
+			// 在没有 open-type=getUserInfo 版本的兼容处理
+			wx.getUserInfo({
+				success: res => {
+					app.globalData.userInfo = res.userInfo
+					this.setData({
+						userInfo: res.userInfo,
+						hasUserInfo: true
+					})
+				}
+			})
+		}
+		//其它数据
     console.log("success")
     let that = this;
     wx.showLoading({
@@ -43,6 +75,16 @@ Component({
     wx.hideLoading()
   },
   methods: {
+		//获取用户信息
+		getUserInfo(e) {
+			console.log(e)
+			app.globalData.userInfo = e.detail.userInfo
+			this.setData({
+				userInfo: e.detail.userInfo,
+				hasUserInfo: true
+			})
+		},
+		
     coutNum(e) {
       if (e > 1000 && e < 10000) {
         e = (e / 1000).toFixed(1) + 'k'

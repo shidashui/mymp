@@ -1,31 +1,40 @@
 <scroll-view scroll-y class="scrollPage">
+	<!-- 头像，昵称信息区域 -->   
   <view class="UCenter-bg">
-    <image src="/images/logo.png" class="png" mode="widthFix"></image>
-    <view class="text-xl">ColorUI组件库
-      <text class="text-df">v2.0</text>
-    </view>
-    <view class="margin-top-sm">
-      <text>{{nickName}}</text>
-    </view>
-    <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+		<view class="flex solid-bottom padding justify-center" style="flex-direction: column;" wx:if="{{!hasUserInfo && canIUse}}">
+			<image src="/images/logo.png" class="png" mode="widthFix"></image>
+			<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'> 点击登陆 </button>
+		</view>
+		<view wx:else>
+			<view class="cu-avatar round xl" style="background-image:url({{userInfo.avatarUrl}}); margin-left: 40rpx;">
+				<view class="cu-tag badge cuIcon-male bg-blue"></view>
+			</view>
+			<view class="margin-top-sm">
+					<view class="text-xl text-center">LOGO欢迎你</view>
+					<view class="text-center">{{userInfo.nickName}}</view>
+			</view>
+		</view>
+    <image src="/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
   </view>
+	<!-- 动态、点赞、发布信息区域 -->
   <view class="padding flex text-center text-grey bg-white shadow-warp">
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-orange">{{visitTotal}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-attentionfill"></text> View</view>
+        <text class="cuIcon-attentionfill"></text> 被查看</view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-blue">{{starCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-favorfill"></text> Star</view>
+        <text class="cuIcon-appreciatefill"></text> 收到赞</view>
     </view>
     <view class="flex flex-sub flex-direction">
       <view class="text-xxl text-green">{{forksCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-fork"></text> Fork</view>
+        <text class="cuIcon-post"></text> 发布的</view>
     </view>
   </view>
+	<!-- 功能区域 -->
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
       <view class="content" bindtap="CopyLink" data-link="https://github.com/weilanwl/ColorUI">
