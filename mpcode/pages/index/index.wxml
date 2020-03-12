@@ -1,11 +1,16 @@
+<!-- 导航栏 -->
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">{{title}}</view>
 </cu-custom>
-<home wx:if="{{PageCur=='home'}}"></home>
-<activity wx:if="{{PageCur=='activity'}}"></activity>
-<tree-hole wx:if="{{PageCur=='tree_hole'}}"></tree-hole>
-<my wx:if="{{PageCur=='my'}}"></my>
-<add wx:if="{{PageCur=='add'}}"></add>
+<!-- 内容区域 -->
+<view class="" style="margin-bottom: 120rpx;">
+	<home wx:if="{{PageCur=='home'}}"></home>
+	<activity wx:if="{{PageCur=='activity'}}"></activity>
+	<tree-hole wx:if="{{PageCur=='tree_hole'}}"></tree-hole>
+	<my wx:if="{{PageCur=='my'}}"></my>
+	<add wx:if="{{PageCur=='add'}}"></add>
+</view>
+<!-- tabbar区域 -->
 <view class="cu-bar tabbar bg-white shadow foot">
   <view class="action" bindtap="NavChange" data-cur="home">
     <view class='cuIcon-cu-image'>

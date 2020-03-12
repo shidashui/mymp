@@ -17,6 +17,12 @@ Component({
 				TabCur: e.currentTarget.dataset.id,
 				scrollLeft: (e.currentTarget.dataset.id-1)*60
 			})
-		}
+		},
+		isCard: function(e) {
+		    console.log(e.detail.value)
+		    this.setData({
+		      isCard: e.detail.value
+		    })
+		  },
 	}
 })
