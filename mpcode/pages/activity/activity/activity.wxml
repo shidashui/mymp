@@ -43,7 +43,7 @@
 	<view  class="cu-item">
 		<view class="text-center text-xxl text-black ">
 			<view class="">
-				<image class="" mode="aspectFit" src="../../images/product.png">
+				<image class="" mode="aspectFit" src="../../../images/product.png">
 				</image>
 			</view> 
 			暂请期待

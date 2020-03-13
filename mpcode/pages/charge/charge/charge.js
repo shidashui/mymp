@@ -1,4 +1,4 @@
-// pages/tree_hole/tree_hole.js
+// pages/charge/charge/charge.js
 Page({
 
   /**

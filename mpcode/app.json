@@ -1,17 +1,17 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/activity/activity",
-    "pages/my/my",
-    "pages/tree_hole/tree_hole",
-    "pages/home/home",
-    "pages/add/add"
+    "pages/activity/activity/activity",
+    "pages/my/my/my",
+    "pages/home/home/home",
+    "pages/add/add/add",
+    "pages/charge/charge/charge"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
-		"navigationBarTitleText": "Color UI",
-		"navigationStyle": "custom",
-		"navigationBarTextStyle": "white"
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

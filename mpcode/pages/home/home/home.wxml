@@ -56,7 +56,7 @@
 		<view class="cu-item" wx:else>
 			<view class="text-center text-xxl text-black ">
 				<view class="">
-					<image class="" mode="aspectFit" src="../../images/product.png">
+					<image class="" mode="aspectFit" src="../../../images/product.png">
 					</image>
 				</view> 
 				暂无内容
@@ -68,7 +68,7 @@
 		<view  class="cu-item">
 			<view class="text-center text-xxl text-black ">
 				<view class="">
-					<image class="" mode="aspectFit" src="../../images/product.png">
+					<image class="" mode="aspectFit" src="../../../images/product.png">
 					</image>
 				</view> 
 				暂无内容
@@ -80,7 +80,7 @@
 		<view  class="cu-item">
 			<view class="text-center text-xxl text-black ">
 				<view class="">
-					<image class="" mode="aspectFit" src="../../images/product.png">
+					<image class="" mode="aspectFit" src="../../../images/product.png">
 					</image>
 				</view> 
 				暂无内容
