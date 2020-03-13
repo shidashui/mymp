@@ -1,4 +1,4 @@
-<view class="" style="padding-top:{{CustomBar}}px;">
+<view class="" style="padding-top:{{CustomBar-10}}px;">
 	<!-- 导航栏：tab -->
 		<view class="cu-custom">
 			<scroll-view scroll-x class="bg-white nav shadow fixed" scroll-with-animation scroll-left="{{scrollLeft}}" style="padding-top:{{CustomBar + 5}}px;">

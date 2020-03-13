@@ -3,7 +3,7 @@ const title_dict = {'home':'首页', 'activity':'活动', 'tree_hole':'树洞', 
 Page({
   data: {
 		title:'首页',
-    PageCur: 'my'
+    PageCur: 'tree_hole'
   },
   NavChange(e) {
 		let cur = e.currentTarget.dataset.cur
