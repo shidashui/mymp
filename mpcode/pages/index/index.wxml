@@ -6,7 +6,6 @@
 <view class="" style="margin-bottom: 120rpx;">
 	<home wx:if="{{PageCur=='home'}}"></home>
 	<activity wx:if="{{PageCur=='activity'}}"></activity>
-	<charge wx:if="{{PageCur=='charge'}}"></charge>
 	<my wx:if="{{PageCur=='my'}}"></my>
 	<add wx:if="{{PageCur=='add'}}"></add>
 </view>
@@ -16,23 +15,13 @@
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/home{{PageCur=='home'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='home'?'text-green':'text-gray'}}">首页</view>
+    <view class="{{PageCur=='home'?'text-green':'text-gray'}}">话题</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="activity">
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/activity{{PageCur=='activity'?'_cur':''}}.png"></image>
     </view>
     <view class="{{PageCur=='activity'?'text-green':'text-gray'}}">活动</view>
-  </view>
-	<view class="action text-gray add-action">
-		<button class="cu-btn cuIcon-add bg-green shadow" bindtap="NavChange" data-cur="add"></button>
-		发布
-	</view>
-  <view class="action" bindtap="NavChange" data-cur="charge">
-    <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/charge{{PageCur=='charge'?'_cur':''}}.png"></image>
-    </view>
-    <view class="{{PageCur=='charge'?'text-green':'text-gray'}}">充电</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="my">
     <view class='cuIcon-cu-image'>

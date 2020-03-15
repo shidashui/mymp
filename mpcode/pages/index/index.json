@@ -2,8 +2,6 @@
   "usingComponents": {
     "home": "/pages/home/home/home",
     "activity": "/pages/activity/activity/activity",
-		"charge":"/pages/charge/charge/charge",
-    "my": "/pages/my/my/my",
-		"add":"/pages/add/add/add"
+    "my": "/pages/my/my/my"
   }
 }

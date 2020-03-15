@@ -1,1 +1,19 @@
-/* pages/home/home.wxss */
+.round-click{
+    height: 100rpx;
+    width: 100rpx;
+    background-color: #6fc043;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 120rpx;
+    right: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+.round-click navigator{
+    font-size: 32rpx;
+    max-width: 80rpx;
+    color: #fff;
+    text-align: center;
+}

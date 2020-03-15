@@ -1,9 +1,9 @@
-const title_dict = {'home':'首页', 'activity':'活动', 'charge':'充电', 'my':'我的', 'add':'发布'}
+const title_dict = {'home':'话题', 'activity':'活动', 'my':'我的'}
 
 Page({
   data: {
-		title:'首页',
-    PageCur: 'charge'
+		title:'话题',
+    PageCur: 'home'
   },
   NavChange(e) {
 		let cur = e.currentTarget.dataset.cur
