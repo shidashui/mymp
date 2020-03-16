@@ -1,0 +1,8 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">话题详情</view>
+</cu-custom>
+<!-- 内容 -->
+<view class="">
+	
+</view>

@@ -22,7 +22,7 @@
 				</view> -->
 				<view class="" wx:for="{{2}}" wx:key>
 					<view class="cu-card dynamic {{isCard?'no-card':''}}">
-						<view class="cu-item shadow">
+						<view class="cu-item shadow" bindtap="toDetail">
 							<view class="cu-list menu-avatar">
 								<view class="cu-item">
 									<!-- 头像 -->

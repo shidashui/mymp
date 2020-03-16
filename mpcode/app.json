@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/activity/activity/activity",
     "pages/my/my/my",
-    "pages/home/home/home"
+    "pages/home/home/home",
+    "pages/home/detail/detail",
+    "pages/home/add/add",
+    "pages/activity/detail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
