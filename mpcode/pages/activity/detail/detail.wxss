@@ -1,1 +1,27 @@
-/* pages/activity/detail/detail.wxss */
+.cu-card.case .img {
+	position: relative;
+}
+
+.cu-card.case .img image {
+	width: 100%;
+}
+
+.cu-card.case .img .cu-tag {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.cu-card.case .img .cu-bar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: transparent;
+	padding: 0rpx 30rpx;
+}
+
+.cu-card.case.no-card .img {
+	/* margin: 30rpx 30rpx 0; */
+	overflow: hidden;
+	/* border-radius: 10rpx; */
+}

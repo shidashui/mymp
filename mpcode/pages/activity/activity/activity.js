@@ -15,12 +15,6 @@ Component({
 			wx.navigateTo({
 				url:'../activity/detail/detail',
 			})
-		},
-		isCard: function(e) {
-		    console.log(e.detail.value)
-		    this.setData({
-		      isCard: e.detail.value
-		    })
-		  },
+		}
 	}
 })

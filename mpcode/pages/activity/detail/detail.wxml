@@ -2,7 +2,142 @@
 	<view slot="backText">返回</view>
 	<view slot="content">活动详情</view>
 </cu-custom>
-<!-- 内容 -->
-<view class="">
+<view>
+	<view class="cu-card case no-card">
+	  <view class="cu-item shadow">
+	    <view class="img">
+				<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+				  <swiper-item wx:for="{{3}}" wx:key>
+				    <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+				  </swiper-item>
+				</swiper>
+	      <view class="cu-tag bg-red">活动</view>
+	      <view class="cu-bar bg-shadeBottom">
+	        <text class="text-cut">活动标题</text>
+	      </view>
+	    </view>
+	    <view class="cu-list menu-avatar">
+	      <view class="cu-item">
+	        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);">
+						<view class="cu-tag badge cuIcon-male bg-blue"></view>
+					</view>
+	        <view class="content flex-sub">
+	          <view class="text-grey">正义天使 凯尔</view>
+	          <view class="text-gray text-sm flex justify-between">
+	            十天前发布
+	            <view class="text-gray text-sm">
+	              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+	              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+	              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+	            </view>
+	          </view>
+	        </view>
+	      </view>
+	    </view>
+	  </view>
+	</view>
+	<!-- 内容 -->
+	<view>
+		<view class="cu-bar bg-white solids-top">
+		  <view class="action">
+		    <text class="cuIcon-title text-blue"></text>开始时间
+				<view class="flex-sub text-center">
+				  <view class="padding">2020-03-03 14:00</view>
+				</view>
+		  </view>
+		</view>
+		<view class="cu-bar bg-white solid-top">
+		  <view class="action">
+		    <text class="cuIcon-title text-blue"></text>结束时间
+				<view class="flex-sub text-center">
+				  <view class="padding">2020-03-30 14:00</view>
+				</view>
+		  </view>
+		</view>
+		<view class="cu-bar bg-white solid-top">
+		  <view class="action">
+		    <text class="cuIcon-title text-blue"></text>活动地点
+				<view class="flex-sub text-center">
+				  <view class="padding">石家庄学院</view>
+				</view>
+		  </view>
+		</view>
+		<view class="cu-bar bg-white solid-top">
+		  <view class="action">
+		    <text class="cuIcon-title text-blue"></text>活动内容
+				<view class="flex-sub">
+				  <view class="padding">石家庄学院石家庄学院石家庄学院石家庄学院石家庄学院石家庄学院石家庄学院石家庄学院</view>
+				</view>
+		  </view>
+		</view>
+	</view>
+	<!-- 联系人 -->
+	<view>
+		<view class="cu-bar bg-white solids-bottom margin-top">
+			<view class="action">联系人</view>
+		</view>
+		<view class="cu-bar bg-white solid-bottom">
+		  <view class="action">
+		    <text class="cuIcon-weixin text-green"></text>微信: 123456789
+		  </view>
+		  <view class="action">
+				<button class="cu-btn bg-green shadow margin-right">复制</button>
+		  </view>
+		</view>
+	</view>
+	<!-- 留言 -->
+	<view class="cu-list menu-avatar comment solids-top">
+		<view class="cu-bar bg-white solids-bottom margin-top">
+			<view class="action">留言</view>
+		</view>
+		<view class="cu-item">
+			<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);">
+				<view class="cu-tag badge cuIcon-male bg-blue"></view>
+			</view>
+			<view class="content">
+				<view class="text-grey">莫甘娜</view>
+				<view class="text-gray text-content text-df">
+					凯尔，你被自己的光芒变的盲目。
+				</view>
+				<view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+					<view class="flex">
+						<view>凯尔：</view>
+						<view class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</view>
+					</view>
+				</view>
+				<view class="margin-top-sm flex justify-between">
+					<view class="text-gray text-df">2018年12月4日</view>
+					<view>
+						<!-- <text class="cuIcon-appreciatefill text-red"></text> -->
+						<text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="cu-item">
+			<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);">
+				<view class="cu-tag badge cuIcon-male bg-blue"></view>
+			</view>
+			<view class="content">
+				<view class="text-grey">凯尔</view>
+				<view class="text-gray text-content text-df">
+					妹妹，如果不是为了飞翔，我们要这翅膀有什么用?
+				</view>
+				<view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+					<view class="flex">
+						<view>莫甘娜：</view>
+						<view class="flex-sub">如果不能立足于大地，要这双脚又有何用?</view>
+					</view>
+				</view>
+				<view class="margin-top-sm flex justify-between">
+					<view class="text-gray text-df">2018年12月4日</view>
+					<view>
+						<!-- <text class="cuIcon-appreciate text-gray"></text> -->
+						<text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 	
 </view>
