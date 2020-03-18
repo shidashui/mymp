@@ -12,6 +12,12 @@ Component({
 		scrollLeft:0
   },
 	methods:{
+		//跳转到发布页
+		toAdd(e){
+			wx.navigateTo({
+				url:'../home/add/add',
+			})
+		},
 		//跳到详情页
 		toDetail(e){
 			console.log('跳转')

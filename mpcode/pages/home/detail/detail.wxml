@@ -3,7 +3,7 @@
 	<view slot="content">话题详情</view>
 </cu-custom>
 <!-- 内容 -->
-<view class="">
+<view class="" style="margin-bottom: 120rpx;">
 	<view class="cu-card dynamic no-card">
 		<view class="cu-item shadow">
 			<view class="cu-list menu-avatar">
@@ -24,7 +24,7 @@
 			</view>
 			<view class="grid flex-sub padding-lr col-3 grid-square">
 				<view class="bg-img" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
-				 wx:for="{{isCard?9:1}}" wx:key="{{index}}">
+				 wx:for="{{9}}" wx:key="{{index}}" bindtap="showQrcode">
 				</view>
 			</view>
 			<view class="text-gray text-sm text-right padding">
@@ -85,5 +85,22 @@
 				</view>
 			</view>
 		</view>
+	</view>
+</view>
+<!-- 底部操作栏 -->
+<view class="cu-bar bg-white tabbar border foot">
+	<view class="action text-red">
+		<view class="cuIcon-likefill"></view> 已赞
+	</view>
+	<view class="action">
+		<view class="action text-orange">
+			<view class="cuIcon-favorfill"></view> 已收藏
+		</view>
+	</view>
+	<view class="action">
+		<view class="cuIcon-message"></view> 留言
+	</view>
+	<view class="action">
+		<view class="cuIcon-share"></view> 分享
 	</view>
 </view>

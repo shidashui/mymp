@@ -2,7 +2,7 @@
 	<view slot="backText">返回</view>
 	<view slot="content">活动详情</view>
 </cu-custom>
-<view>
+<view style="margin-bottom: 120rpx;">
 	<view class="cu-card case no-card">
 	  <view class="cu-item shadow">
 	    <view class="img">
@@ -140,4 +140,22 @@
 		</view>
 	</view>
 	
+</view>
+
+<!-- 底部操作栏 -->
+<view class="cu-bar bg-white tabbar border foot">
+	<view class="action text-red">
+		<view class="cuIcon-likefill"></view> 已赞
+	</view>
+	<view class="action">
+		<view class="action text-orange">
+			<view class="cuIcon-favorfill"></view> 已收藏
+		</view>
+	</view>
+	<view class="action">
+		<view class="cuIcon-message"></view> 留言
+	</view>
+	<view class="action">
+		<view class="cuIcon-share"></view> 分享
+	</view>
 </view>

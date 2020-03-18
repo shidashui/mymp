@@ -49,7 +49,7 @@
 		  </navigator>
 		</view>
     <view class="cu-item arrow">
-      <navigator class="content" url="/pages/about/about/about" hover-class="none">
+      <navigator class="content" url="/pages/my/about/about" hover-class="none">
         <image src="/images/logo.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">关于</text>
       </navigator>
@@ -66,12 +66,12 @@
         <text class="text-grey">意见反馈</text>
       </button>
     </view>
-    <view class="cu-item arrow">
+    <!-- <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/test/list" hover-class="none">
         <text class="cuIcon-creativefill text-orange"></text>
         <text class="text-grey">加入我</text>
       </navigator>
-    </view>
+    </view> -->
   </view>
   <view class="cu-tabbar-height"></view>
 </scroll-view>

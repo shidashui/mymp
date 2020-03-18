@@ -1,2 +1,37 @@
-<!--pages/home/add/add.wxml-->
-<text>pages/home/add/add.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">发布话题</view>
+</cu-custom>
+<view>
+	<form bindsubmit="formSubmit">
+		<view class="cu-form-group align-start">
+			<view class="title">话题内容：</view>
+			<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder=""></textarea>
+		</view>
+			
+		<view class="cu-bar bg-white margin-top">
+			<view class="action">
+				图片选择
+			</view>
+			<view class="action">
+				{{imgList.length}}/9
+			</view>
+		</view>
+		<view class="cu-form-group">
+			<view class="grid col-3 grid-square flex-sub">
+				<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+					<image src='{{imgList[index]}}' mode='aspectFill'></image>
+					<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+						<text class="cuIcon-close"></text>
+					</view>
+				</view>
+				<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+					<text class="cuIcon-cameraadd"></text>
+				</view>
+			</view>
+		</view>
+		<view class="padding flex flex-direction">
+		  <button class="cu-btn bg-blue margin-tb-sm lg" formType="submit">发布</button>
+		</view>
+	</form>
+</view>

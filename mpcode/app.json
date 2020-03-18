@@ -6,7 +6,8 @@
     "pages/home/home/home",
     "pages/home/detail/detail",
     "pages/home/add/add",
-    "pages/activity/detail/detail"
+    "pages/activity/detail/detail",
+    "pages/my/about/about"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

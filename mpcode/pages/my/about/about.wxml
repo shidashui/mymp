@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于应心</view>
+  <view class='text-content'>
+    <view>你好，使用者！</view>
+    <view class='margin-top-sm'>我曾是应用心理学专业的一名学生，本科毕业后我从事了程序开发行业，但对于自己曾经的专业仍存在情节。</view>
+    <view class='margin-top-sm'>该小程序主要是希望能够在校园里(目前是这样想)提高心理学的影响力。在这里，我希望你能够对心理学得到基本的了解，如果你是心理专业的同学，我希望你能够对普及心理学出一份力。</view>
+    <view class='margin-top-sm'>如果你觉得我的想法很好，将它分享给更多的人，也可以支持我一下，毕竟开发不易。</view>
+    <view class='margin-top-sm'>如果你有更好的建议或者想加入我，可以给我发邮件告诉我--164635470@qq.com</view>
+  </view>
+</view>
