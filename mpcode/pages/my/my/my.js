@@ -68,7 +68,7 @@ Component({
         that.setData({
           starCount: that.coutNum(3000),
           forksCount: that.coutNum(484),
-          visitTotal: that.coutNum(24000)
+          visitTotal: that.coutNum(24000) 
         })
       }
     }
@@ -77,6 +77,11 @@ Component({
   methods: {
 		//获取用户信息
 		getUserInfo(e) {
+			wx.login({
+			  success (res) {
+			    console.log('asdfasdf',res)
+			  }
+			})
 			console.log(e)
 			app.globalData.userInfo = e.detail.userInfo
 			this.setData({
