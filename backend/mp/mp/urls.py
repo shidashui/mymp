@@ -14,10 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.static import serve
+from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+
 import xadmin
+from api.v1.item.views import SchoolViewSet
+from mp.settings import MEDIA_ROOT
+
+router = DefaultRouter()
+router.register('v1/school', SchoolViewSet, basename='school')
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('xadmin/', xadmin.site.urls),
+    path('api-auth/',include('rest_framework.urls')),
+    #文件
+    path('media/<path:path>', serve, {'document_root':MEDIA_ROOT}),
+    #drf文档，title自定义
+    path('docs',include_docs_urls(title='应心APIdoc')),
+
+    #drf url
+    path('', include(router.urls)),
 ]

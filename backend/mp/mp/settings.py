@@ -45,12 +45,13 @@ INSTALLED_APPS = [
     'base',
     'rest_framework',
     # 'coreschema',
-    # 'corsheaders',      #解决跨域应用
+    'corsheaders',      #解决跨域应用
     'xadmin',
     'crispy_forms',     #xadmin依赖
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',    # 跨域中间件
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +60,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# 跨域配置
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'mp.urls'
 
