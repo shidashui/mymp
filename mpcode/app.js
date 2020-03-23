@@ -6,12 +6,47 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    // 登录  
+		wx.checkSession({
+			success: function(){
+				//存在登陆态
+				console.log('success')
+			},
+			fail: function(){
+				//不存在登陆态
+				wx.login({
+				  success: function (res) {
+						console.log(res) 
+				    if (res.code) {
+				      //发起网络请求
+				      wx.request({
+				        url: 'http://127.0.0.1:8000/auth',
+				        data: {
+				          code: res.code
+				        },
+				        success: function (res) {
+				          const self = this
+									//获取到用户凭证 存儲 3rd_session 
+									var json = JSON.parse(res.data.Data)
+									wx.setStorage({
+										key: "third_Session", 
+										data: json.third_Session
+									})
+									// getUserInfo()
+				        },
+				        fail: function (res) {
+				
+				        }
+				      })
+				    }
+				  },
+				  fail: function (res) {
+				
+				  }
+				})
+			}
+		})
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {

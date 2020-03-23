@@ -21,6 +21,7 @@ class User(Base):
     )
     open_id = models.CharField("标识符", unique=True, max_length=128)
     session_key = models.CharField("会话密钥", max_length=128)
+    token = models.CharField("token", max_length=128, default=None)
     mobile = models.CharField("手机号", max_length=11, null=True, blank=True)
     student_id = models.CharField("学号", null=True, blank=True, max_length=32)
     is_authenticated = models.BooleanField("认证", default=False)

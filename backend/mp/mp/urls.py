@@ -21,6 +21,7 @@ from rest_framework.routers import DefaultRouter
 
 import xadmin
 from api.v1.item.views import SchoolViewSet
+from base.views import Login
 from mp.settings import MEDIA_ROOT
 
 router = DefaultRouter()
@@ -36,6 +37,9 @@ urlpatterns = [
     #drf文档，title自定义
     path('docs',include_docs_urls(title='应心APIdoc')),
 
-    #drf url
+    # drf url
     path('', include(router.urls)),
+
+    # auth
+    path('auth/', Login.as_view(), name='auth'),
 ]

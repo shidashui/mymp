@@ -79,10 +79,10 @@ Component({
 		getUserInfo(e) {
 			wx.login({
 			  success (res) {
-			    console.log('asdfasdf',res)
+			    // console.log('asdfasdf',res)
 			  }
 			})
-			console.log(e)
+			// console.log(e)
 			app.globalData.userInfo = e.detail.userInfo
 			this.setData({
 				userInfo: e.detail.userInfo,
