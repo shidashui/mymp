@@ -27,3 +27,13 @@ class Dict(Base):
 
     def __str__(self):
         return self.item_name
+
+class SysNotice(Base):
+    to_all = models.BooleanField("给所有人", default=True)
+    to_one_id = models.IntegerField("给个人", null=True, blank=True)
+    content = models.TextField("内容")
+
+    class Meta:
+        db_table = "sys_notice"
+        verbose_name = "系统通知"
+        verbose_name_plural = "系统通知"

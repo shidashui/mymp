@@ -10,6 +10,16 @@ class Like(Base):
         verbose_name = "点赞"
         verbose_name_plural = "点赞"
 
+class Report(Base):
+    user_id = models.IntegerField("用户id")
+    item_code = models.CharField("条目码", max_length=16)  # default=topic
+    content = models.TextField("举报内容")
+
+    class Meta:
+        db_table = "report"
+        verbose_name = "举报"
+        verbose_name_plural = "举报"
+
 class Collect(Base):
     user_id = models.IntegerField("用户id")
     item_code = models.CharField("条目码", max_length=16)

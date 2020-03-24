@@ -18,15 +18,24 @@ class User(Base):
     GENDER_CHOICES = (
         ("male", "男"),
         ("female", "女"),
+        ("", "")
     )
     open_id = models.CharField("标识符", unique=True, max_length=128)
     session_key = models.CharField("会话密钥", max_length=128)
     token = models.CharField("token", max_length=128, default=None)
+    # wx userInfo
+    nickname = models.CharField("昵称", max_length=32, default=None)
+    avatar_url = models.URLField("头像", default=None)
+    gender = models.CharField("性别", choices=GENDER_CHOICES, default="", max_length=8)
+    country = models.CharField("国家", max_length=32, default=None)
+    province = models.CharField("省份", max_length=32, default=None)
+    city = models.CharField("城市", max_length=32, default=None)
+    language = models.CharField("语言", max_length=32, default=None)
+    # auth info
     mobile = models.CharField("手机号", max_length=11, null=True, blank=True)
     student_id = models.CharField("学号", null=True, blank=True, max_length=32)
     is_authenticated = models.BooleanField("认证", default=False)
     role_code = models.CharField("角色代码", null=True, blank=True, max_length=16)
-    gender = models.CharField("性别", choices=GENDER_CHOICES, default="male", max_length=8)
     auth_img = models.ImageField("认证图片", upload_to="img/auth", null=True, blank=True)
     school_id = models.IntegerField("学校id", null=True, blank=True)
 
