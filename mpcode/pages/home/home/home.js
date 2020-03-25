@@ -1,3 +1,4 @@
+var common = require('../../../utils/common.js')
 const app = getApp();
 
 Component({
@@ -13,6 +14,9 @@ Component({
   },
 	methods:{
 		//跳转到发布页
+		test(e){
+			common.userLogin()
+		},
 		toAdd(e){
 			wx.navigateTo({
 				url:'../home/add/add',

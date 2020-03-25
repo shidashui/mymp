@@ -20,11 +20,13 @@ from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 
 import xadmin
-from api.v1.item.views import SchoolViewSet
+from api.v1.user.views import SchoolViewSet, UserViewSet
 from base.views import Login
 from mp.settings import MEDIA_ROOT
 
 router = DefaultRouter()
+# user
+router.register('v1/user', UserViewSet, basename='user')
 router.register('v1/school', SchoolViewSet, basename='school')
 
 

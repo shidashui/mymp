@@ -1,36 +1,43 @@
 //用户登陆
-function userLogin() {
+function userLogin(self) {
   wx.checkSession({
     success: function () {
       //存在登陆态
+			console.log('self->',self)
+			self.modalName = 'Modal'
     },
     fail: function () {
       //不存在登陆态
       onLogin()
+			self.modalName = "Modal" 
+			console.log('self->',self) 
     }
   })
-}
+} 
 
 function onLogin() {
   wx.login({
-    success: function (res) {
+    success: function (res) { 
       if (res.code) {
         //发起网络请求
         wx.request({
-          url: 'Our Server ApiUrl',
+          url: 'http://127.0.0.1:8000/auth/',
           data: {
             code: res.code
           },
+					header:{
+						"content-type": "application/json"
+					},
+					method:"POST",
           success: function (res) {
-            const self = this
-            if (逻辑成功) {
-              //获取到用户凭证 存儲 3rd_session 
-              var json = JSON.parse(res.data.Data)
-              wx.setStorage({
-                key: "third_Session", 
-                data: json.third_Session
+            if (true) {  
+              //获取到用户凭证 存儲 token 
+              var json = res.data.data
+              wx.setStorage({ 
+                key: "token", 
+                data: json.token
               })
-              getUserInfo()
+              // getUserInfo()
             }
             else {
 
@@ -49,24 +56,49 @@ function onLogin() {
 
 }
 
-function getUserInfo() {
-  wx.getUserInfo({
-    success: function (res) {
-      var userInfo = res.userInfo
-      userInfoSetInSQL(userInfo)
-    },
-    fail: function () {
-      userAccess()
-    }
-  })
-}
+// function getUserInfo() {
+// 	wx.getSetting({
+// 		success(res){
+// 			if (!res.authSetting['scope.userInfo']) {
+// 				console.log('there')
+// 				wx.authorize({
+// 					scope:'scope.userInfo',
+// 					success(){
+// 						wx.getUserInfo({
+// 							success: function (res) {
+// 								var userInfo = res.userInfo
+// 								userInfoSetInSQL(userInfo)
+								
+// 								// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+// 								// 所以此处加入 callback 以防止这种情况
+// 								if (this.userInfoReadyCallback) {
+// 									this.userInfoReadyCallback(res)
+// 								}
+// 							},
+// 							fail: function () {
+// 								// userAccess() 
+// 								console.log('fail')
+// 							}
+// 						}) 
+// 					},
+// 					fail(){
+// 						console.log('没有授权')
+// 					}
+// 				})
+// 			} else {
+// 				console.log('test')
+// 			}
+// 		}
+// 	})
+// }
 
 function userInfoSetInSQL(userInfo) {
+	console.log('userInfo->', userInfo)
   wx.getStorage({
-    key: 'third_Session',
+    key: 'token',
     success: function (res) {
       wx.request({
-        url: 'Our Server ApiUrl',
+        url: 'http://127.0.0.1:8000/v1/user/',
         data: {
           third_Session: res.data,
           nickName: userInfo.nickName,
@@ -77,7 +109,7 @@ function userInfoSetInSQL(userInfo) {
           country: userInfo.country
         },
         success: function (res) {
-          if (逻辑成功) {
+          if (res) {
             //SQL更新用户数据成功
           }
           else {
@@ -88,3 +120,9 @@ function userInfoSetInSQL(userInfo) {
     }
   })
 }
+
+module.exports = {
+	onLogin:onLogin,
+  userLogin:userLogin,
+	userInfoSetInSQL:userInfoSetInSQL
+} 

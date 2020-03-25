@@ -81,7 +81,8 @@
 			</view>
 		</view>
 		<!-- 悬浮发布按钮 -->
-		<view class="round-click" hover-class="plus-hover" bindtap="toAdd">
+		<view class="round-click" hover-class="plus-hover" open-type='getUserInfo' bindtap="test">
+<!-- 		<view class="round-click" hover-class="plus-hover" bindtap="toAdd"> -->
 		  <view class="cuIcon-add"></view>
 		</view>
 	</view>

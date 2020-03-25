@@ -2,6 +2,17 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">{{title}}</view>
 </cu-custom>
+<!-- 授权模态框 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">用户信息授权</view>
+    </view>
+    <view class="padding-xl">
+      <button class="cu-btn bg-green lg shadow" open-type="getUserInfo" bindgetuserinfo="authUserInfo" >是否授权</button>
+    </view>
+  </view>
+</view>
 <!-- 内容区域 -->
 <view class="" style="margin-bottom: 120rpx;">
 	<home wx:if="{{PageCur=='home'}}"></home>

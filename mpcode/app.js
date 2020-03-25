@@ -1,4 +1,6 @@
 //app.js
+var common = require('utils/common.js')
+
 App({
   onLaunch: function() {
     // 展示本地存储能力
@@ -7,45 +9,19 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录  
+		// common.userLogin(self)
+		const self = this
 		wx.checkSession({
-			success: function(){
-				//存在登陆态
-				console.log('success')
-			},
-			fail: function(){
-				//不存在登陆态
-				wx.login({
-				  success: function (res) {
-						console.log(res) 
-				    if (res.code) {
-				      //发起网络请求
-				      wx.request({
-				        url: 'http://127.0.0.1:8000/auth',
-				        data: {
-				          code: res.code
-				        },
-				        success: function (res) {
-				          const self = this
-									//获取到用户凭证 存儲 3rd_session 
-									var json = JSON.parse(res.data.Data)
-									wx.setStorage({
-										key: "third_Session", 
-										data: json.third_Session
-									})
-									// getUserInfo()
-				        },
-				        fail: function (res) {
-				
-				        }
-				      })
-				    }
-				  },
-				  fail: function (res) {
-				
-				  }
-				})
-			}
+		  success() { 
+		    //存在登陆态
+		  },
+		  fail(){ 
+		    //不存在登陆态
+				this.globalData.modalName = 'Modal' 
+		    common.onLogin()
+		  }
 		})
+		
     
     // 获取用户信息
     wx.getSetting({
@@ -64,12 +40,13 @@ App({
               }
             }
           })
-        }
+        } 
       }
     })
     // 获取系统状态栏信息
     wx.getSystemInfo({
       success: e => {
+				console.log('tawetawet', e.stat)
         this.globalData.StatusBar = e.statusBarHeight;
         let capsule = wx.getMenuButtonBoundingClientRect();
         if (capsule) {
@@ -77,11 +54,12 @@ App({
         	this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
         } else {
         	this.globalData.CustomBar = e.statusBarHeight + 50;
-        }
+        } 
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+		modalName: null
   }
-})
+}) 
