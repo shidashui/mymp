@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'corsheaders',      #解决跨域应用
     'xadmin',
     'crispy_forms',     #xadmin依赖
+    'questionnarie',    # 问卷应用
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,7 @@ ROOT_URLCONF = 'mp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

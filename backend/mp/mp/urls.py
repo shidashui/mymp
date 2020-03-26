@@ -44,4 +44,7 @@ urlpatterns = [
 
     # auth
     path('auth/', Login.as_view(), name='auth'),
+
+    # questionnarie
+    path('questionnarie/',include('questionnarie.urls'))
 ]

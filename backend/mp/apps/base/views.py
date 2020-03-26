@@ -33,4 +33,3 @@ class Login(APIView):
                 return Response({"code":202, "msg":"code无效"})
         else:
             return Response({"code":201, "msg":"缺少参数"})
-

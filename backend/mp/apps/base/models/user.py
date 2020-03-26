@@ -32,6 +32,7 @@ class User(Base):
     city = models.CharField("城市", max_length=32, default=None, blank=True, null=True)
     language = models.CharField("语言", max_length=32, default=None, blank=True, null=True)
     # auth info
+    email = models.EmailField("邮箱", default=None, null=True, blank=True)
     mobile = models.CharField("手机号", max_length=11, null=True, blank=True)
     student_id = models.CharField("学号", null=True, blank=True, max_length=32)
     is_authenticated = models.BooleanField("认证", default=False)
