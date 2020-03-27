@@ -4,7 +4,8 @@ from base.models.base import Base
 
 
 class Questionnaire(Base):
-    email = models.EmailField("邮箱")
+    # email = models.EmailField("邮箱")
+    user_id = models.IntegerField("用户id", default=0)
     name = models.CharField("问卷名", max_length=128)
     brief = models.TextField("简介")
 
